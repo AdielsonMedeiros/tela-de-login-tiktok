@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -20,7 +21,11 @@ class _LoginPageState extends State<LoginPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFF0D47A1), Color(0xFF1976D2), Color(0xFF42A5F5)],
+            colors: [
+              Color(0xFF0D47A1),
+              Color(0xFF1976D2),
+              Color(0xFF42A5F5),
+            ],
           ),
         ),
         child: Center(
@@ -38,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-
+                
                 const SizedBox(height: 40),
 
                 Card(
@@ -50,6 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
                       children: [
+                        
                         TextFormField(
                           controller: _emailController,
                           keyboardType: TextInputType.emailAddress,
@@ -64,6 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
 
                         const SizedBox(height: 20),
+
                         TextFormField(
                           controller: _passwordController,
                           obscureText: !_isPasswordVisible,
@@ -97,9 +104,8 @@ class _LoginPageState extends State<LoginPage> {
                           height: 50,
                           child: ElevatedButton(
                             onPressed: () {
-                              //implementar prox live
+                              // implementar prox live
                             },
-
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF0D47A1),
                               foregroundColor: Colors.white,
@@ -108,7 +114,6 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               elevation: 2,
                             ),
-
                             child: const Text(
                               'Entrar',
                               style: TextStyle(
@@ -117,17 +122,40 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                           ),
-
-                          
                         ),
-                      ],      
-            
-
-
+                      ],
                     ),
                   ),
                 ),
-                
+
+                const SizedBox(height: 30),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Não tem uma conta?',
+                      style: TextStyle(color: Colors.white70),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterPage(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        'Cadastre-se',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
