@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'delivery_home_page.dart';
 import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -21,11 +23,7 @@ class _LoginPageState extends State<LoginPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF0D47A1),
-              Color(0xFF1976D2),
-              Color(0xFF42A5F5),
-            ],
+            colors: [Color(0xFF0D47A1), Color(0xFF1976D2), Color(0xFF42A5F5)],
           ),
         ),
         child: Center(
@@ -43,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                
+
                 const SizedBox(height: 40),
 
                 Card(
@@ -55,7 +53,6 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
                       children: [
-                        
                         TextFormField(
                           controller: _emailController,
                           keyboardType: TextInputType.emailAddress,
@@ -104,7 +101,14 @@ class _LoginPageState extends State<LoginPage> {
                           height: 50,
                           child: ElevatedButton(
                             onPressed: () {
-                              // implementar prox live
+                              // Login Mockado
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const DeliveryHomePage(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF0D47A1),

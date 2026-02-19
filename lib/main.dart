@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+
+import 'firebase_config.dart'; // Importação da configuração do Firebase via .env
 import 'login_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Inicializa o Firebase com as credenciais do .env
+  await FirebaseConfig.initialize();
+
   runApp(const MyApp());
 }
 
